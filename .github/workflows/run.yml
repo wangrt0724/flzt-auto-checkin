@@ -22,10 +22,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run main.py
-        env: 
-            BASE_URL: ${{secrets.BASE_URL}}
-            EMAIL: ${{secrets.EMAIL}}
-            PASSWORD: ${{secrets.PASSWORD}}
-            SERVER_KEY: ${{secrets.SERVER_KEY}}
+        env:
+          BASE_URL: ${{secrets.BASE_URL}}
+          EMAIL: ${{secrets.EMAIL}}
+          PASSWORD: ${{secrets.PASSWORD}}
+          SERVER_KEY: ${{secrets.SERVER_KEY}}
         run: |
           python main.py
+      - name: Keep alive
+        run: |
+          mkdir .keep-alive
+          date > .keep-alive/keep-alive.md
+      - name: Push
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: keep-alive
+          build_dir: .keep-alive
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
