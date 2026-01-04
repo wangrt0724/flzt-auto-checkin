@@ -54,13 +54,13 @@ class FLZT:
             logger.error('获取用户信息失败', e)
             return
         # 转换流量
-        try:
-            r = self.s.post(url=CONVERT_TRAFFIC_URL,
-                            data={'transfer': traffic})
-            logger.info(f'转换流量: {r.json()}')
-        except Exception as e:
-            logger.error('转换流量失败', e)
-            return
-        notification = ServerChanNotification(
+        # try:
+        #     r = self.s.post(url=CONVERT_TRAFFIC_URL,
+        #                     data={'transfer': traffic})
+        #     logger.info(f'转换流量: {r.json()}')
+        # except Exception as e:
+        #     logger.error('转换流量失败', e)
+        #     return
+        # notification = ServerChanNotification(
             title='FLZT签到', content=f'签到流量转换成功，已转换的签到流量：{format_traffic(traffic)}')
         notification.notify()
