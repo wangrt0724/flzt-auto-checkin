@@ -53,6 +53,10 @@ class FLZT:
         except Exception as e:
             logger.error('获取用户信息失败', e)
             return
+        # Server酱通知
+        notification = ServerChanNotification(
+            title='FLZT签到', content=f'签到流量转换成功，已转换的签到流量：{format_traffic(traffic)}')
+        notification.notify()
         # 转换流量
         # try:
         #     r = self.s.post(url=CONVERT_TRAFFIC_URL,
@@ -61,7 +65,4 @@ class FLZT:
         # except Exception as e:
         #     logger.error('转换流量失败', e)
         #     return
-        # Server酱通知
-        notification = ServerChanNotification(
-            title='FLZT签到', content=f'签到流量转换成功，已转换的签到流量：{format_traffic(traffic)}')
-        notification.notify()
+
