@@ -1,4 +1,4 @@
-name: "FLZT 每日签到 + 转换流量"
+name: "FLZT 每日签到"
 
 on:
   schedule:
