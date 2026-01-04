@@ -62,5 +62,5 @@ class FLZT:
         #     logger.error('转换流量失败', e)
         #     return
         # notification = ServerChanNotification(
-            title='FLZT签到', content=f'签到流量转换成功，已转换的签到流量：{format_traffic(traffic)}')
-        notification.notify()
+        #     title='FLZT签到', content=f'签到流量转换成功，已转换的签到流量：{format_traffic(traffic)}')
+        # notification.notify()
