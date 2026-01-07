@@ -52,10 +52,10 @@ class FLZT:
             logger.info(f'获取用户信息成功，剩余签到流量：{format_traffic(traffic)}')
         except Exception as e:
             logger.error('获取用户信息失败', e)
-            return
+        #    return
         # Server酱通知
         notification = ServerChanNotification(
-            title='FLZT签到', content=f'签到流量转换成功，已转换的签到流量：{format_traffic(traffic)}')
+            title='FLZT签到', content=f'签到成功，剩余签到流量：{format_traffic(traffic)}')
         notification.notify()
         # 转换流量
         # try:
