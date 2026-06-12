@@ -10,7 +10,7 @@
 
    方法：Settings -> Secrets -> New repository secret
 
-    - BASE_URL (`https://flzt.org`，必填)
+    - BASE_URL (`https://flzt.club`，必填)
     - EMAIL (邮箱，必填)
     - PASSWORD (密码，必填)
     - SERVER_KEY ([Server酱](https://sct.ftqq.com/sendkey) SendKey，用于推送脚本执行结果；选填)
